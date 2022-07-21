@@ -2,6 +2,8 @@
 %
 % Billy McDermot, June 2022
 rng(1)
+close all;
+clc;
 
 %% 1) Test using random Gaussian example
 

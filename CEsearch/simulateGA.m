@@ -1,4 +1,4 @@
-function [ best_weights, best_fitnesses, mean_fitnesses, std_fitnesses ] = simulateGA(data, pop_size, deme_size, steps, crossover_rate, mutation_rate, fitness_method)
+function [ best_weights, best_fitnesses, mean_fitnesses, std_fitnesses ] = simulateGA(data, pop_size, deme_size, steps, crossover_rate, mutation_rate)
 %% SIMULATEGA Search for causally emergent macrovariable V_t for data X_t
 %
 %   data: an array of the >=1 datasets you want to find weights for. The
@@ -22,7 +22,7 @@ function [ best_weights, best_fitnesses, mean_fitnesses, std_fitnesses ] = simul
 if length(data) == 1
     init_data = data{1};
 else
-    init_data = cell2mat(data{1});            % data to initialise the GA
+    init_data = cell2mat(data(1));            % data to initialise the GA
 end
 no_genes = length(init_data(:,1));           % number of channels of data
 genes = 10*randn(pop_size, no_genes);          % randomly initialise genes
@@ -34,7 +34,7 @@ std_fitnesses = zeros(steps, 1);
 % calculate initial fitnesses
 fitnesses = zeros(pop_size, 1);
 for i = 1:pop_size
-    fitnesses(i) = GAEmergencePsi(data, genes(i,:), fitness_method);
+    fitnesses(i) = GAEmergencePsi(data, genes(i,:));
 end
 
 best_fitness = max(fitnesses);
@@ -62,7 +62,7 @@ for i = 1:steps
         end
     end
     % calculate new fitness and update best fitness
-    fitness = GAEmergencePsi(data, genes(loser,:), fitness_method);
+    fitness = GAEmergencePsi(data, genes(loser,:));
     fitnesses(loser) = fitness;
     if fitness > best_fitness
         best_fitness = fitness;

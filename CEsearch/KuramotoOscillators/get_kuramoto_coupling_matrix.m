@@ -1,10 +1,10 @@
-function kuramoto_coupling_matrix = get_kuramoto_coupling_matrix(intra_comm_size, n_communities, A); 
+function kuramoto_coupling_matrix = get_kuramoto_coupling_matrix(intra_comm_size, n_communities, A) 
 	
 d0 = intra_comm_size; 	
 d1 = intra_comm_size;							% numbers of connections at different community levels
 		
-N = intra_comm_size*n_communities;					% total number of oscillators: 8
-M = n_communities;							% number of lowest level communities (what's that?): 2
+N = intra_comm_size*n_communities;					% total number of oscillators
+M = n_communities;							% number of lowest level communities
 	
 k1 = (1-A)/2;
 k0 = 1-k1;

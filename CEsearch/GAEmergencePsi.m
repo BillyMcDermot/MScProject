@@ -1,4 +1,4 @@
-function fitness = GAEmergencePsi(Xs, genes, fitness_method)
+function fitness = GAEmergencePsi(Xs, genes)
 %% EMERGENCEPSI Compute causal emergence criterion from data
 %
 %     Edited version of EmergencePsi() which computes the Psi value for
@@ -7,12 +7,8 @@ function fitness = GAEmergencePsi(Xs, genes, fitness_method)
 %
 % Billy McDermot, July 2022
 
-%% Determine method to use on Psi results
-if fitness_method == "mean"
-    fit_meth = @mean;
-else
-    fit_meth = @min;
-end
+%% fitness is equal to the minimum fitness across each dataset
+fit_meth = @min;
 
 %% Compute Psis for each time series
 % if there is only one time series
@@ -23,8 +19,8 @@ if length(Xs) == 1
 % more than one time series
 else
     fitnesses = zeros(length(Xs), 1);
-    for i = length(Xs)
-        X = cell2mat(Xs(i));
+    for i = 1:length(Xs)
+        X = Xs{i};
         V = sum(genes.'.*X);
         fitnesses(i) = EmergencePsi(X.', V);
     end

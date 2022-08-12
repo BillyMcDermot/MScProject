@@ -6,8 +6,8 @@ close all;
 clc;
 
 %% parameter specification
-intra_comm_size =   12;				    	% intra-community size
-n_communities =	    3;				   	% number of communities		
+intra_comm_size =   32;				    	% intra-community size
+n_communities =	    8;				   	% number of communities		
 A =				    0.2;	                % A vector
 beta =				0.1;                % noise correlation vector: use beta values only up to 0.4, as sigma met & 
 										% sigma chi turn out to be zero for greater values of beta; in these cases 

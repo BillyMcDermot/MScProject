@@ -97,10 +97,10 @@ function [Mskekur] = Mskekur(X,c,alpha)
 %  Stevens, J. (1992), Applied Multivariate Statistics for Social Sciences. 2nd. ed.
 %         New-Jersey:Lawrance Erlbaum Associates Publishers. pp. 247-248.
 %
-if nargin < 3
+if nargin < 3, 
     alpha = 0.05;  %(default)
 end 
-if nargin < 2 
+if nargin < 2, 
     error('Requires at least two input arguments.'); 
 end 
 [n,p] = size(X);
@@ -138,17 +138,17 @@ fprintf('corrected for small sample        %3.4f%17.4f%8i%10.4f\n\n',b1p,g1c,v,P
 fprintf('Kurtosis         %24.4f%17.4f%18.4f\n',b2p,g2,P2);
 fprintf('----------------------------------------------------------------------------\n');
 fprintf('With a given significance level of: %.2f\n', alpha);
-if P1 >= alpha
+if P1 >= alpha;
    fprintf('The multivariate skewness results not significative.\n');
 else 
    fprintf('The multivariate skewness results significative.\n');
 end
-if P1c >= alpha
+if P1c >= alpha;
    fprintf('The multivariate skewness corrected for small sample results not significative.\n');
 else 
    fprintf('The multivariate skewness corrected for small sample results significative.\n');
 end
-if P2 >= alpha
+if P2 >= alpha;
    fprintf('The multivariate kurtosis results not significative.\n\n');
 else 
    fprintf('The multivariate kurtosis results significative.\n\n');
@@ -181,4 +181,4 @@ else
     ylabel('Squared Mahalanobis distance')
     title ('Chi-square Q-Q plot')  
 end
-return
+return,

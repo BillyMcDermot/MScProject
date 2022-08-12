@@ -1,6 +1,6 @@
-======================
+
 Data used:
-======================
+
 ------------
 Kuramoto Oscillator data:
 ------------
@@ -30,9 +30,9 @@ KET data:
 310713_51_KET.mat
 310713_51_PLA.mat
 
-======================
+
 Scripts:
-======================
+
 generate_kuramoto_data.m		Generates Kuramoto oscillator data
 gauss_vs_discrete.m 			Compares the discretisation method on three different macro variables of Kuramoto oscillator data (figure 2)
 gauss_vs_discrete_meg.m 		Uses the GA on one MEG data and then discretises variables for comparison (figure 3)

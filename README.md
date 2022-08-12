@@ -1,13 +1,13 @@
 Data used:
 =
-------------
+
 Kuramoto Oscillator data:
-------------
+--
 8x32_10000.mat 			Data generated using 'generate_kuramoto_data.m' script
 
-------------
+
 KET data:
-------------
+--
 021013_51_KET.mat
 021013_51_PLA.mat
 040806_1_KET.mat

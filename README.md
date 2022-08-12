@@ -66,6 +66,10 @@ all_participants_ga.m 			Uses the GA on each participant in each condition separ
 
 ga_meg.m				Uses the GA on the MEG data in different scenarios (figure 8)
 
+hist_kuramoto.m 			Takes random samples of oscillators and creates a histogram of their phase (appendix 1)
+
+qq_meg.m 				Takes random samples of participants, conditions, and channels and creatse a qq plot (appendix 2)
+
 
 
 For scripts to work, you will need the data listed above and to change the location of the files to your file location(s) when they are loaded in the scripts.

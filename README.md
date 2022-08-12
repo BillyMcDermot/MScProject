@@ -1,6 +1,6 @@
-
+=
 Data used:
-
+=
 ------------
 Kuramoto Oscillator data:
 ------------
